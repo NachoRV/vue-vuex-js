@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ titel }}</h1>
+    <h1>{{ countTitel}}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters  } from 'vuex';
 
 export default {
   name: 'HelloWorld',
@@ -40,6 +40,7 @@ export default {
   },
   computed: {
     ...mapState(['titel']),
+    ...mapGetters(['countTitel'])
   },
 };
 </script>

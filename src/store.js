@@ -6,8 +6,10 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 
   /**
+   * https://coursetro.com/posts/code/144/A-Vuex-Tutorial-by-Example---Learn-Vue-State-Management
+   * 
    * State declaramos las propiedades o variables que queremos almacenar en el Store
-   * en el componente podemos importarlas con:
+   * En el componente podemos importarlas con:
    *  import { mapState } from 'vuex';
    *   computed: {
     ...mapState(['titel']),
@@ -20,12 +22,19 @@ export default new Vuex.Store({
   },
   /**
    * los utilizamos para acceder a los datos cuando necesitemos realizar calculos con ellos
+   * En el componente podemos importarlas con:
+   * import { mapGetters } from 'vuex'
+   * ...mapGetters(['countTitel'])
    */
   getters: {
-    countTitel: state => {
+    countTitel: (state) => {
       return state.titel.length;
     },
   },
+  /**
+   * Son para modificar los datos del State
+   * 
+   */
   mutations: {
 
   },
