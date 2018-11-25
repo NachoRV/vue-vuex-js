@@ -17,6 +17,7 @@
     <input type="number" v-model="valorIf"><br><hr>
 
     <!-- muestra el valor de Data -->
+    <h2>muestra los datos del data</h2>
     <pre> {{ $data }}</pre>
   </div>
 </template>
