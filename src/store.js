@@ -41,7 +41,9 @@ export default new Vuex.Store({
       state.i = state.i + 1
     }
   },
-
+  /**
+   * Son mara acceder a las mutacion y son de caracter asincrono
+   */
   actions: {
     async getCount(context, data) {
       context.commit('increment', data);
