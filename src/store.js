@@ -42,7 +42,7 @@ export default new Vuex.Store({
     }
   },
   /**
-   * Son mara acceder a las mutacion y son de caracter asincrono
+   * Son para acceder a las mutacion y son de caracter asincrono
    */
   actions: {
     async getCount(context, data) {

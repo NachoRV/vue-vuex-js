@@ -15,7 +15,7 @@
     <label v-if='valorIf == 0'>Introduce el numero 1 y desaparezco con un v-if</label>
     <label v-else-if='valorIf == 1'>Mi valor es un uno </label>
     <label v-else>Mi valor es distinto de 1 o 0 </label><br>
-    <input type="number" v-model="valorIf"><br><hr>
+    <input type="number" v-model="valorIf"><hr>
     <h3>v-for para renderizar listas</h3>
     <ul>
       <ol v-for="(dia, key) in dias" :key= key>{{dia}}</ol>
@@ -23,7 +23,16 @@
      <h3>v-for para renderizar objetos</h3>
     <ul>
       <ol v-for="(value, key ) in persona" :key= key>{{key}}: {{value}}</ol>
-    </ul>
+    </ul><hr>
+    <!--v-on:click
+    v-on:keyup
+    v-on:keyup.enter
+    v-on:submit.prevent -> para formularios
+    -->
+    <h3>v-on para capturar eventos</h3>
+    <p>Contaror {{ count }} - {{ countMas10 }}</p>
+    <button v-on:click="aumentar">mas + 1</button>
+
 
     <!-- muestra el valor de Data -->
     <h2>muestra los datos del data</h2>
@@ -37,6 +46,9 @@ export default {
   mounted() {
     this.cargarCriptomenedas();
   },
+  /**
+   * variables 
+  */
   data(){
     return{
       titulo: '',
@@ -48,7 +60,8 @@ export default {
         name: 'Nacho',
         apellido: 'Royo-V',
         profesion: 'Dev'
-      }
+      },
+      count:0
     }
   },
 // methods par crear las gunciones
@@ -59,10 +72,18 @@ export default {
           console.log(respuesta)
           //this.monedasJson = respuesta
         });
+    },
+    aumentar() {
+      this.count++
     }
+  },
 
+  /** se usan para manipular los elementos del data antes de renderizarlos */
+  computed: {
+    countMas10(){
 
+      return this.count +10
+    }
   }
-
 }
 </script>
