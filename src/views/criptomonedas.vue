@@ -81,7 +81,6 @@ export default {
   /** se usan para manipular los elementos del data antes de renderizarlos y solo se evaluan si cambia el data */
   computed: {
     countMas10(){
-
       return this.count +10
     }
   }
