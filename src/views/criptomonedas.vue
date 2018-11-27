@@ -1,3 +1,5 @@
+<!-- <slot> </slot> para cambiar contenio dentro de un componente -->
+
 <template>
   <div class="about">
     <!-- {{ titulo }} renderiza/ introduce el valor del elemento pasaso reactividad-->
@@ -43,13 +45,20 @@
 import axios from 'axios'
 
 export default {
+  props:{
+    nombre:{
+      type: [String, Array], // null -> cualquier tipo
+      require: false
+      // default: nombre@dddd.com
+    },
+  },
   mounted() {
     this.cargarCriptomenedas();
   },
   /**
    * variables 
   */
-  data(){
+  data() {
     return{
       titulo: '',
       mostrar: false,
@@ -83,6 +92,7 @@ export default {
     countMas10(){
       return this.count +10
     }
-  }
+  },
 }
+
 </script>
